@@ -1,0 +1,20 @@
+[package]
+name = "trinket-scratch"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+panic-halt = "*"
+
+[profile.dev]
+panic = "abort"
+lto = true
+opt-level = "s"
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+debug = true
+lto = true
+opt-level = "s"
+

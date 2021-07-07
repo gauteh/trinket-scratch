@@ -1,0 +1,8 @@
+[tasks.build]
+command = "cargo"
+args = ["build", "-Z", "build-std=core", "--target", "avr-atmega328p.json", "--release"]
+
+[tasks.flash]
+command = "avrdude"
+args = ["-patmega328p", "-cusbtiny", "-D", "-Uflash:w:target/avr-atmega328p/release/trinket-scratch.elf:e"]
+dependencies = ["build"]
