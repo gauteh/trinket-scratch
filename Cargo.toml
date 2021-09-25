@@ -5,6 +5,12 @@ edition = "2018"
 
 [dependencies]
 panic-halt = "*"
+atmega-hal = { path = "../avr-hal/mcu/atmega-hal", features = [ "atmega328p" ] }
+avr-hal-generic = { path = "../avr-hal/avr-hal-generic" }
+
+[dependencies.arduino-hal]
+path = "../avr-hal/arduino-hal/"
+features = ["trinket-pro"]
 
 [profile.dev]
 panic = "abort"
